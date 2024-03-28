@@ -3,7 +3,7 @@ import axios from "axios"
 export const getNotes = (token) => (dispatch) => {
     dispatch({ type: "NOTE_REQUEST" });
 
-    axios.get('http://localhost:8080/note', {
+    axios.get('https://green-mentor-3c3f.onrender.com/note', {
         headers: {
             'Authorization': token
         }
@@ -18,7 +18,7 @@ export const getNotes = (token) => (dispatch) => {
 
 export const addNote = (data, token) => (dispatch) => {
     dispatch({type:"ADD_NOTE_REQUEST"})
-    axios.post('http://localhost:8080/note/create', data, {
+    axios.post('https://green-mentor-3c3f.onrender.com/note/create', data, {
         headers: {
             'Authorization': token 
         }
@@ -35,7 +35,7 @@ export const addNote = (data, token) => (dispatch) => {
 
 
 export const deleteNote = (id,token) =>{
-    axios.post(`http://localhost:8080/note/delete/${id}`,"", {
+    axios.post(`https://green-mentor-3c3f.onrender.com/note/delete/${id}`,"", {
         headers: {
             'Authorization': token 
         }
